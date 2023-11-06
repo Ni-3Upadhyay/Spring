@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean class="com.Autowiring.needed" id="needed1">            <!-- for autowiring by method the method of the class and id in Xml must be same -->
+        <property method="need1" value="34"/>                      <!-- if they are different then the output will be null -->
+        <property method="need2" value="45"/>                      <!-- in by method if there are two beans of same class it checks the method and runs that particular that matches-->
+        <property method="need3" value="Nitin Upadhyay"/>          <!-- by type and by method both uses setter method-->
+    </bean>
+
+    <bean class="com.Autowiring.needed" id="needed">
+        <property method="need1" value="54"/>
+        <property method="need2" value="95"/>
+        <property method="need3" value=" Upadhyay"/>
+    </bean>
+
+<!--    <bean class="com.Autowiring.depended" id="de" autowire="byName">-->
+<!--&lt;!&ndash;        <property method="needed" ref="need"/>                            ->    This is manual wiring &ndash;&gt;-->
+<!--    </bean>-->
+
+<!--    <bean class="com.Autowiring.depended" id="de" autowire="byType">-->
+<!--        &lt;!&ndash; in by type it checks the  bean class in Xml and matches it with the depended class variable &ndash;&gt;-->
+<!--        &lt;!&ndash; when there are two beans of same class it gives an error &ndash;&gt;-->
+<!--    </bean>-->
+
+    <bean class="com.Autowiring.depended" id="de" autowire="constructor"/>
+</beans>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/util
+      http://www.springframework.org/schema/util/spring-util-3.0.xsd
+       ">
+
+    <!-- Stand alone list  -> to add stand alone collection you need to add util schema-->
+
+    <util:list list-class="java.util.Vector" id="myBestFriend">
+        <value>Ankit</value>                                        <!--now these values can be used multiple times -->
+        <value>Yashu</value>
+        <value>barola</value>
+        <value>ravi</value>
+        <value>Bhuppi</value>
+    </util:list>
+
+    <util:map map-class="java.util.TreeMap" id="myFees">
+        <entry key="MCA" value="300000"/>
+        <entry key="MBA" value="500000"/>
+        <entry key="BCA" value="250000"/>
+    </util:map>
+
+    <util:properties id="ni">           <!-- No need to give class to the properties because it is a alreay a class not an interface-->
+        <prop key="driver"> com.mysql.jdbc.Driver</prop>
+        <prop key="username">Nitin Upadhyay</prop>
+        <prop key="password">nitin</prop>
+        <prop key="url">mysql:jdbc//localhost:3306/database</prop>
+    </util:properties>
+
+    <bean id="friend1" class="com.StandaloneCollection.person">
+<!--        <property method="friends">-->                                <!--method 1 -->
+<!--            <ref bean="myBestFriend"/>-->
+<!--        </property>-->
+        <property method="friends" ref="myBestFriend"/>
+        <property method="feeStructure" ref="myFees"/>
+        <property method="props" ref="ni"/>
+    </bean>
+
+    <bean id="friend2" class="com.StandaloneCollection.person">
+        <property method="friends" ref="myBestFriend"/>
+    </bean>
+
+
+
+</beans>

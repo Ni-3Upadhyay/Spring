@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:annotation-config/>
+
+    <bean class="com.AutowiringUsingAnnotation.needed" id ="ne1">     <!-- whether use annotation at property at constructor or at setter -->
+        <property method="need1" value="23"/>                          <!-- all matches the class in xml and type -->
+        <property method="need2" value="Nitin Upadhyay"/>
+        <property method="need3" value="M"/>
+    </bean>
+
+    <bean class="com.AutowiringUsingAnnotation.needed" id ="ne2">
+        <property method="need1" value="23"/>
+        <property method="need2" value="Nitin Upadhyay"/>
+        <property method="need3" value="M"/>
+    </bean>
+
+    <bean class="com.AutowiringUsingAnnotation.depended" id ="de" >
+
+    </bean>
+
+</beans>

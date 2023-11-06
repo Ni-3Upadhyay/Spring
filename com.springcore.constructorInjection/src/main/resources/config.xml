@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.construcorFirst.Person" id="per1">
+        <constructor-arg value="Nitin Upadhyay" type ="String"/>
+        <constructor-arg value="12" type="int"/>
+        <constructor-arg ref="refper1"/>
+    </bean>
+
+    <bean class="com.construcorFirst.Certi" id="refper1">
+        <constructor-arg value="University of michigan" type="String"/>
+        <constructor-arg value="38493" type="int"/>
+    </bean>
+
+    <bean class="com.constructorAmbiguity.addition" id="add">
+        <constructor-arg value="33"/>
+        <constructor-arg value="66"/>
+    </bean>
+
+</beans>

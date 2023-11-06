@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="emp1" class="com.springcore.collection.Employee">
+    <property name="Name" value="Nitin Upadhyay"/>
+
+    <property name="phones">
+        <list>
+            <value>9971772394</value>
+            <value>3984838498</value>
+            <value>4094940389</value>
+            <value>3094092912</value>
+        </list>
+    </property>
+
+    <property name="addresses">
+        <set>
+            <value>Haldwani</value>
+            <value>Almora</value>
+            <value>Delhi</value>
+            <value>any place</value>
+        </set>
+    </property>
+
+    <property name="courses">
+        <map>
+            <entry key="s1" value="a1"/>
+            <entry key="s2" value="a2"/>
+            <entry key="s3" value="a3"/>
+        </map>
+    </property>
+
+</bean>
+</beans>

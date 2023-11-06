@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student" class="com.newspringtry.first">      <!-- here id is unique name used by main function to call this bean  -->
+                                                            <!-- class needs the packageName.className -->
+<!--        First Method            -->
+        <property name="studentid">                         <!-- property is used for setter injection-->
+            <value>32</value>                               <!-- value is used to give the value -->
+        </property>
+
+<!--        Second Method          -->
+        <property name="studentname" value="Nitin Upadhyay"/>
+
+        <property name="studentaddress">
+            <value>dehradun</value>
+        </property>
+    </bean>
+
+    <bean id="student2" class="com.newspringtry.first">      <!-- here id is unique name used by main function to call this bean  -->
+        <!-- class needs the packageName.className -->
+        <!--        First Method            -->
+        <property name="studentid">                         <!-- property is used for setter injection-->
+            <value>2</value>                               <!-- value is used to give the value -->
+        </property>
+
+        <!--        Second Method          -->
+        <property name="studentname" value="Mohit Upadhyay"/>
+
+        <property name="studentaddress">
+            <value>Haldwani</value>
+        </property>
+    </bean>
+
+</beans>

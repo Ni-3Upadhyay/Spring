@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="rB" class="com.com.springcore.ReferenceB">        <!-- bean of class -->
+        <property name="y" value="Class A depends on B"/>       <!-- normal variable inject -->
+    </bean>
+    <bean id="rA" class="com.com.springcore.ReferenceA">
+        <property name="x" value="it needs an object form B"/>
+        <property name="obj">                                   <!-- to call an object give the name of object -->
+        <ref bean="rB"/>                                        <!-- to call object of another bean give refrence of the bean -->
+        </property>
+    </bean>
+
+</beans>
